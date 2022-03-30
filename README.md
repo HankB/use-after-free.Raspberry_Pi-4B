@@ -2,6 +2,9 @@
 
 notes on collecting information on this issue
 
+* Pi 4B with 8GB RAM
+* Booting from an SSD
+
 ## procedure
 
 * install image `xzcat 20220121_raspi_4_bookworm.img.xz >/dev/sdf` on other desktop
@@ -21,7 +24,9 @@ notes on collecting information on this issue
 
 * remote login, su to root and `dmesg --follow`
 * login to desktop and open browser
-* 
+* Mouse to upper left corner to bring up overview
+* Grab browser and try to move to next right desktop
+* underflow is reported in `dmesg` output.
 
 
 ## Results
