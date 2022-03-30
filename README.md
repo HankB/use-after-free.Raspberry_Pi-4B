@@ -159,6 +159,19 @@ Linux up 5.17.0-rc8-arm64 #1 SMP Debian 5.17~rc8-1~exp1 (2022-03-14) aarch64 GNU
 * Desktop is not locked up - still usable.
 * Capture `dmesg` output dmesg03 <https://paste.debian.net/1236164/>
 
+## increase debug output
+
+```text
+root@up:~# cat /boot/firmware/cmdline.txt
+console=tty0 console=ttyS1,115200 root=LABEL=RASPIROOT rw fsck.repair=yes net.ifnames=0  rootwait drm.debug=0x1ff
+root@up:~# 
+```
+
+* Repeat test, piping output to a disk file
+* find report in output.
+* Split into 159Kb chunks and post the one with the error <https://paste.debian.net/1236182/>
+* I captured 20 chunks and did not even go back to the boot message. `drm.debug=0x1ff` produces a *lot* of output. I can provide additional chunks if useful or use a different bitmask if that would help. Or let me know how I can best collect this information and convey to the DD involved. Best to file an issue to this repo to specify further needs.
+
 
 ## incidental 
 
