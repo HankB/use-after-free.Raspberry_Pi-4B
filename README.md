@@ -30,7 +30,7 @@ First try, on second boot, system mounted root RO (after a slow boot) `<trl><alt
 
 Second try going better - boot takes  ~30s.
 
-### kernel 5.10, desktop installed
+### kernel 5.15, desktop installed
 
 ```text
 Linux up 5.15.0-2-arm64 #1 SMP Debian 5.15.5-2 (2021-12-18) aarch64 GNU/Linux
@@ -77,7 +77,11 @@ Linux up 5.16.0-5-arm64 #1 SMP Debian 5.16.14-1 (2022-03-15) aarch64 GNU/Linux
 * Reboot and repeat but without delays. Same resul;t (no DRM error but still get `underflow; use-after-free.`)
 * `dmesg` output similar to previous and not saved.
 
-### kernel 
+### kernel 5.17 from experimental
+
+```text
+Linux up 5.17.0-rc8-arm64 #1 SMP Debian 5.17~rc8-1~exp1 (2022-03-14) aarch64 GNU/Linux
+```
 
 Add experimental repo per instructions at <https://wiki.debian.org/HowToUpgradeKernel>
 (NB: Cannot copy instructions from page because leading space causes here document to not work with `bash`.)
@@ -138,4 +142,19 @@ I: /initrd.img is now a symlink to boot/initrd.img-5.17.0-rc8-arm64
 /etc/kernel/postinst.d/initramfs-tools:
 update-initramfs: Generating /boot/initrd.img-5.17.0-rc8-arm64
 root@up:~# 
+```
 
+```text
+Linux up 5.17.0-rc8-arm64 #1 SMP Debian 5.17~rc8-1~exp1 (2022-03-14) aarch64 GNU/Linux
+```
+
+* remote in and start `dmesg --follow`
+* Log in to desktop, open Firefox and try to move to next reight desktop (as before.)
+* `underflow; use-after-free.` appears not without DRM errors seen with earlier kernels.
+* Desktop is not locked up - still usable.
+* Capture `dmesg` output dmesg03 <https://paste.debian.net/1236164/>
+
+
+## incidental 
+
+Tested WiFi/Ethernet for someone else - dump of `daemon.log` at <https://paste.debian.net/1236170/>
