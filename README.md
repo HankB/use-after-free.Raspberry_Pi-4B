@@ -172,6 +172,21 @@ root@up:~#
 * Split into 159Kb chunks and post the one with the error <https://paste.debian.net/1236182/>
 * I captured 20 chunks and did not even go back to the boot message. `drm.debug=0x1ff` produces a *lot* of output. I can provide additional chunks if useful or use a different bitmask if that would help. Or let me know how I can best collect this information and convey to the DD involved. Best to file an issue to this repo to specify further needs.
 
+## Another kernel from experimmental
+
+`bugreport` suggests
+
+```text
+The following newer release(s) are available in the Debian archive:
+  experimental: 5.17.1-1~exp1
+```
+
+```text
+apt install -t experimental linux-image-arm64
+```
+
+* Same test procedure
+* same result
 
 ## incidental 
 
