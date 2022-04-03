@@ -4,6 +4,7 @@ notes on collecting information on this issue
 
 * Pi 4B with 8GB RAM
 * Booting from an SSD
+* Debian bug report <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1008692>
 
 ## procedure
 
